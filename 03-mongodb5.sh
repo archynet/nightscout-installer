@@ -6,13 +6,13 @@ if [[ $(id -u) -ne 0 ]]; then
 fi
 
 . ./000_helper_lsb.sh
-if [ ! -f "/etc/apt/sources.list.d/mongodb-org-4.4.list" ]; then
+if [ ! -f "/etc/apt/sources.list.d/mongodb-org-5.0.list" ]; then
 	if [ "$FLAVOR" == "ubuntu" ]; then
-		echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu ${DISTRO}/mongodb-org/4.4 multiverse" > /etc/apt/sources.list.d/mongodb-org-4.4.list
+		echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu ${DISTRO}/mongodb-org/5.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-5.0.list
 	elif [ "$FLAVOR" == "debian" ]; then
-		echo "deb http://repo.mongodb.org/apt/debian ${DISTRO}/mongodb-org/4.4 main" > /etc/apt/sources.list.d/mongodb-org-4.4.list
+		echo "deb http://repo.mongodb.org/apt/debian ${DISTRO}/mongodb-org/5.0 main" > /etc/apt/sources.list.d/mongodb-org-5.0.list
 	fi
-	curl -s https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
+	curl -s https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
 	apt update
 fi
 MONGOINSTALLED=$(dpkg-query -W -f='${Status}' mongodb-org 2>/dev/null | grep -c "ok installed")
