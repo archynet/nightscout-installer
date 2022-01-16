@@ -1,4 +1,4 @@
-# Nightscout Installer (for Raspberry Pi & Linux in general)
+# Nightscout Installer Linux
 
 ## Status
 Test with MongoDB 5 on Ubuntu Server 20.1
