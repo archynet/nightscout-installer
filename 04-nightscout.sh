@@ -12,7 +12,7 @@ echo $APISECRET > apipw.txt
 cat starter.sh | sed "s/MYMONGOPW/${MONGOPW}/" | sed "s/MYAPISECRET/${APISECRET}/" > ${HOME}/start_nightscout.sh
 
 if [ ! -d "${HOME}/nightscout-git" ]; then
-	git clone https://github.com/nightscout/cgm-remote-monitor.git ${HOME}/nightscout-git
+	git clone https://github.com/archynet/cgm-remote-monitor.git ${HOME}/nightscout-git
 fi
 
 # get latest release version https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c
