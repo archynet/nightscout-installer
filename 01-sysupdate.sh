@@ -49,3 +49,4 @@ fi
 dpkg-reconfigure tzdata
 
 # TODO: raspberry pi basic configuration, firewall?
+sudo apt install nfs-common -y
